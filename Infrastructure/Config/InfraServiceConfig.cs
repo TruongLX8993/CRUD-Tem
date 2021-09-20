@@ -1,10 +1,10 @@
 using System.Reflection;
+using Base.Queries;
 using Base.Repositories;
 using Infrastructure.Data.Queries;
 using Infrastructure.Data.Repository;
 using Microsoft.Extensions.DependencyInjection;
 using NHibernate;
-using IQuery = Application.Queries.IQuery;
 
 namespace Infrastructure.Config
 {
@@ -18,7 +18,7 @@ namespace Infrastructure.Config
             serviceCollection.AddTransient<ISession>(session => session.GetService<NhibernateMgr>()?.Open());
             serviceCollection.AddTransient<IStatelessSession>(session => session.GetService<NhibernateMgr>()?.OpenStateless());
             serviceCollection.AddTransient(typeof(IRepository<,>), typeof(BaseRepository<,>));
-            serviceCollection.AddTransient(typeof(IQuery),typeof(BaseQuery) );
+            serviceCollection.AddTransient(typeof(IGenericQuery),typeof(BaseGenericQuery) );
             return serviceCollection;
         }
     }

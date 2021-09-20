@@ -3,9 +3,10 @@ using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Base.Specification;
 
-namespace Application.Queries
+namespace Base.Queries
 {
-    public interface IQuery
+
+    public interface IGenericQuery
     {
         Task<Paging<T>> Get<D, T>(
             ISpecification<D> specification, Expression<Func<D, T>> selector, PagingInfo pagingInfo);

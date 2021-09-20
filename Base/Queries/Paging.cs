@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Application.Queries
+namespace Base.Queries
 {
     public class Paging<T>
     {

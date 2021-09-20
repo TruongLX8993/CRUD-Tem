@@ -3,15 +3,14 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Application.DTOs;
-using Application.Queries;
+using Base.Queries;
 using Base.Specification;
 using Infrastructure.Data.Extensions;
 using NHibernate;
-using IQuery = Application.Queries.IQuery;
 
 namespace Infrastructure.Data.Queries
 {
-    public class BaseQuery: IQuery
+    public class BaseGenericQuery: Base.Queries.IGenericQuery
     {
         public async Task<Paging<T>> Get<D, T>(ISpecification<D> specification, Expression<Func<D, T>> selector, PagingInfo pagingInfo)
         {
@@ -22,7 +21,7 @@ namespace Infrastructure.Data.Queries
         
         private readonly IStatelessSession _statelessSession;
 
-        public BaseQuery(IStatelessSession statelessSession)
+        public BaseGenericQuery(IStatelessSession statelessSession)
         {
             _statelessSession = statelessSession;
         }

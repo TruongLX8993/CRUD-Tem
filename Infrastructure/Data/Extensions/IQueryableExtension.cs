@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using Application.Queries;
+using Base.Queries;
 using NHibernate.Linq;
 
 namespace Infrastructure.Data.Extensions

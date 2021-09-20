@@ -1,8 +1,8 @@
 using System;
 using System.Threading.Tasks;
 using Application.DTOs;
-using Application.Queries;
 using Application.Services;
+using Base.Queries;
 
 namespace Application.ServiceImpl
 {

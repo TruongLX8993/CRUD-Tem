@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
 using Application.DTOs;
-using Application.Queries;
 using Application.Specifications;
+using Base.Queries;
 using Domain.Entities;
 using Infrastructure.Config;
 using Microsoft.Extensions.DependencyInjection;
@@ -26,7 +26,7 @@ namespace Test
         [Test]
         public async Task Test()
         {
-            var query = _serviceProvider.GetService<IQuery>();
+            var query = _serviceProvider.GetService<IGenericQuery>();
             var page = await query.Get<CustomerEntity,CustomerListItemDTO>(new CustomerSpecification("truonglx", null),
                 cus => new CustomerListItemDTO() { Name = cus.Name },
                 new PagingInfo(1, 10));

@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 using Application.DTOs;
-using Application.Queries;
+using Base.Queries;
 
 namespace Application.Services
 {
