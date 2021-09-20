@@ -1,16 +1,17 @@
 using System.Reflection;
 using Base.Queries;
 using Base.Repositories;
+using Infrastructure.Config;
 using Infrastructure.Data.Queries;
 using Infrastructure.Data.Repository;
 using Microsoft.Extensions.DependencyInjection;
 using NHibernate;
 
-namespace Infrastructure.Config
+namespace Infrastructure
 {
-    public static class InfraServiceConfig
+    public static class InfrastructureConfig
     {
-        public static IServiceCollection ConfigInfra(this IServiceCollection serviceCollection,
+        public static IServiceCollection ConfigInfraSrv(this IServiceCollection serviceCollection,
             string connectionString)
         {
             var nhibernateMgr = new NhibernateMgr(connectionString,Assembly.GetExecutingAssembly());

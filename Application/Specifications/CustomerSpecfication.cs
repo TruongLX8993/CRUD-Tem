@@ -5,7 +5,7 @@ using Domain.Entities;
 
 namespace Application.Specifications
 {
-    public class CustomerSpecification : BaseSpecification<CustomerEntity>
+    public class CustomerSpecification : BaseSpecification<Customer>
     {
         private readonly string _name;
         private string _phone;
@@ -17,7 +17,7 @@ namespace Application.Specifications
         }
 
 
-        public override Expression<Func<CustomerEntity, bool>> IsSatisfied()
+        public override Expression<Func<Customer, bool>> IsSatisfied()
         {
             return cus => cus.Name == _name;
         }

@@ -3,7 +3,7 @@ using FluentNHibernate.Mapping;
 
 namespace Infrastructure.Data.Mappers
 {
-    public class CustomerMapper : ClassMap<CustomerEntity>
+    public class CustomerMapper : ClassMap<Customer>
     {
         public CustomerMapper()
         {

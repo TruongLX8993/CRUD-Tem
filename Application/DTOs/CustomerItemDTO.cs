@@ -1,6 +1,6 @@
 namespace Application.DTOs
 {
-    public class CustomerListItemDTO
+    public class CustomerItemDTO
     {
         public string Name;
     }
