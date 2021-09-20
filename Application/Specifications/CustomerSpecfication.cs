@@ -19,7 +19,7 @@ namespace Application.Specifications
 
         public override Expression<Func<Customer, bool>> IsSatisfied()
         {
-            return cus => cus.Name == _name;
+            return cus => cus.Name.Contains(_name);
         }
     }
 }

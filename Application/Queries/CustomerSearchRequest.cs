@@ -1,19 +1,16 @@
-﻿using System.Text.Json.Serialization;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 using Application.Specifications;
 using Base.Queries;
 using Base.Shared;
-using MediatR;
 using Newtonsoft.Json;
 
 namespace Application.Queries
 {
-    public class CustomerSearchRequest : IRequest<Paging<CustomerSearchItem>>
+    public class CustomerSearchRequest : SearchRequest<CustomerSearchItem>
     {
         [JsonProperty("phone")] public string Phone { get; set; }
         [JsonProperty("name")] public string Name { get; set; }
-        [JsonProperty("pageInfo")] public PagingInfo PagingInfo { get; set; }
         public CustomerSpecification GetSpecification() => new CustomerSpecification(Name, Phone);
     }
 
@@ -23,7 +20,8 @@ namespace Application.Queries
     }
 
 
-    public class CustomerSearchRequestHandler : IRequestHandler<CustomerSearchRequest, Paging<CustomerSearchItem>>
+    
+    public class CustomerSearchRequestHandler : SearchRequestHandler<CustomerSearchRequest,CustomerSearchItem>
     {
         private readonly IGenericQuery _genericQuery;
 
@@ -32,13 +30,12 @@ namespace Application.Queries
             _genericQuery = genericQuery;
         }
 
-        public async Task<Paging<CustomerSearchItem>> Handle(
-            CustomerSearchRequest request, CancellationToken cancellationToken)
+        public async Task<Paging<CustomerSearchItem>> Handle(CustomerSearchRequest request, CancellationToken cancellationToken)
         {
             return await _genericQuery.Get(request.GetSpecification(), item => new CustomerSearchItem()
             {
                 Name = item.Name
-            }, request.PagingInfo, cancellationToken);
+            }, request.GetPagingInfo(), cancellationToken);
         }
     }
 }
