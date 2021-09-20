@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="Command" />
+      <Folder Include="Common" />
+      <Folder Include="Validations" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Base\Base.csproj" />
+      <ProjectReference Include="..\Customer.Domain\Customer.Domain.csproj" />
+      <ProjectReference Include="..\Customer.Infrastructure\Customer.Infrastructure.csproj" />
+    </ItemGroup>
+
+</Project>

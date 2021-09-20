@@ -1,0 +1,30 @@
+﻿{
+    "Routes": [
+        {
+            "DownstreamPathTemplate": "/api/customer/search",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 8993
+                }
+            ],
+            "UpstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 8993
+                }
+            ],
+            "UpstreamPathTemplate": "/api/customer/search",
+            "UpstreamHttpMethod": [
+                "GET",
+                "POST",
+                "PUT",
+                "DELETE"
+            ]
+        }
+    ],
+    "GlobalConfiguration": {
+        "BaseUrl": "http://locahost:8993"
+    }
+}
