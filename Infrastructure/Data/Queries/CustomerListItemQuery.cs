@@ -4,8 +4,7 @@ using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Application.DTOs;
 using Application.Queries;
-using Domain.Entities;
-using Domain.Specification;
+using Base.Specification;
 using Infrastructure.Data.Extensions;
 using NHibernate;
 using IQuery = Application.Queries.IQuery;
@@ -27,6 +26,6 @@ namespace Infrastructure.Data.Queries
         {
             _statelessSession = statelessSession;
         }
-
+        
     }
 }

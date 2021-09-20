@@ -1,3 +1,5 @@
+using Base.Domain;
+
 namespace Domain.Entities
 {
     public class CustomerEntity : BaseEntity<int>

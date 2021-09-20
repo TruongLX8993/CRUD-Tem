@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace Domain.Specification
+namespace Base.Specification
 {
     public interface ISpecification<T>
     { 

@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using Domain.Entities;
-using Domain.Specification;
+using Base.Domain;
+using Base.Specification;
 
-namespace Domain.Repositories
+namespace Base.Repositories
 {
     public interface IRepository<TKey, TEntity> where TEntity : BaseEntity<TKey>
     {

@@ -1,8 +1,8 @@
 using System.ComponentModel.Design;
 using System.Threading;
 using System.Threading.Tasks;
+using Base.Repositories;
 using Domain.Entities;
-using Domain.Repositories;
 using Infrastructure.Config;
 using Microsoft.Extensions.DependencyInjection;
 using NUnit.Framework;

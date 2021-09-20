@@ -1,7 +1,7 @@
 using System;
 using System.Linq.Expressions;
 
-namespace Domain.Specification
+namespace Base.Specification
 {
     public class OrSpecification<T> : BaseSpecification<T>
     {

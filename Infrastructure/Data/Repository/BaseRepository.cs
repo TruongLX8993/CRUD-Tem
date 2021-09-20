@@ -2,11 +2,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Domain.Entities;
-using Domain.Repositories;
-using Domain.Specification;
+using Base.Domain;
+using Base.Repositories;
+using Base.Specification;
 using NHibernate;
 using NHibernate.Linq;
+
 
 namespace Infrastructure.Data.Repository
 {

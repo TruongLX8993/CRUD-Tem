@@ -1,5 +1,5 @@
 using System.Reflection;
-using Domain.Repositories;
+using Base.Repositories;
 using Infrastructure.Data.Queries;
 using Infrastructure.Data.Repository;
 using Microsoft.Extensions.DependencyInjection;

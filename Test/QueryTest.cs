@@ -27,7 +27,7 @@ namespace Test
         public async Task Test()
         {
             var query = _serviceProvider.GetService<IQuery>();
-            var page = await query.Get(new CustomerSpecification("truonglx", null),
+            var page = await query.Get<CustomerEntity,CustomerListItemDTO>(new CustomerSpecification("truonglx", null),
                 cus => new CustomerListItemDTO() { Name = cus.Name },
                 new PagingInfo(1, 10));
         }

@@ -1,7 +1,7 @@
 using System;
 using System.Linq.Expressions;
+using Base.Specification;
 using Domain.Entities;
-using Domain.Specification;
 
 namespace Application.Specifications
 {
